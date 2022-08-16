@@ -1,0 +1,105 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomQuote generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: black;
+
+        }
+
+        h2 {
+            color: white;
+            text-shadow: 0 0 10px greenyellow,
+                0 0 20px red,
+                0 0 30px blue;
+            margin-bottom: 55px;
+        }
+
+        .quotebox {
+            width: 650px;
+            height: 250px;
+            background-color: greenyellow;
+            padding: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 15px;
+        }
+
+        #quote {
+            color: firebrick;
+        }
+
+        .btn1 {
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 90px;
+            position: fixed;
+        }
+
+        .btn1:hover {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+
+            transition: 0.5s;
+            box-shadow: 3px 10px 15px black;
+
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Random Quote Generator on button click.</h2>
+        <div class="quotebox">
+            <h1 id="quote">Love yourself first, before loving others.</h1>
+            <button class="btn1" onclick="changeQuote()">Click Me</button>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    let a = document.getElementById('quote');
+
+    function changeQuote() {
+        let quotes = ["Student life is golden life.", "Work is worship.", "Always keep smile on your face.",
+            "Do some good deeds in your life.", "Show some gratitude for the mother Earth and Nature.",
+            "Be your own queen, Don't wait for someone to make you queen.", "Take Care of your parents till your last breath."];
+
+        let eachquote = quotes[Math.floor(Math.random() * quotes.length)];
+        a.innerText = eachquote;
+
+    }
+</script>
+
+</html>
